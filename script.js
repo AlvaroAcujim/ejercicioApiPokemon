@@ -60,14 +60,19 @@ const consumeAbilities = async (ability) => {
       throw new Error(`Error ${response.status}`);
     }
     const data = await response.json();
-
+    const spanishDescrip = data.flavor_text_entries.find(
+      (el) => el.language.name === "es"
+    );
+    const englishDescrip = data.flavor_text_entries.find(
+      (el) => el.language.name === "en"
+    );
     pokemonAbilityStat = {
       precision: data.accuracy || 0,
       poder: data.power || 0,
       pp: data.pp,
-      descripcion: data.flavor_text_entries[1].flavor_text,
+      descripcion: spanishDescrip.flavor_text || englishDescrip.flavor_text,
     };
-
+    console.log(data.flavor_text_entries);
     return pokemonAbilityStat;
   } catch (e) {
     console.log(e);
@@ -94,8 +99,8 @@ const getDataPokemon = async (input) => {
             "/" +
             data.abilities[1].ability.name
           : data.abilities[0].ability.name,
-      Altura: data.height/10,
-      Peso: data.weight/10,
+      Altura: data.height / 10,
+      Peso: data.weight / 10,
       Tipo:
         data.types.length > 1
           ? data.types[0].type.name + "/" + data.types[1].type.name
@@ -145,9 +150,11 @@ const showAbilities = (pokemonAbilities, inputValue, ul) => {
   let pokemonFilter = pokemonAbilities.filter((el) =>
     el.name.includes(inputValue)
   );
-  if(pokemonFilter.length === 0){
+  if (pokemonFilter.length === 0) {
     const li = createElements("li");
-    const txt = document.createTextNode(`El pokemon no puede aprender ninguna habilidad con ese nombre`);
+    const txt = document.createTextNode(
+      `El pokemon no puede aprender ninguna habilidad con ese nombre`
+    );
     li.setAttribute("id", "ability");
     li.append(txt);
     ul.append(li);
