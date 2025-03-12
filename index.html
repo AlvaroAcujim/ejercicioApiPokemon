@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link href="styles.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">
+        <form class="form" id="form">
+            <label for="name">Nombre Pokemon</label>
+            <input type="text" name="name" id="nameInp" list="pokemons">
+            <datalist id="pokemons">
+                
+            </datalist>
+            <div>
+                <button id="save">Buscar</button>
+            </div>
+            <div>
+                <h3 id="errorMessage">Introduzca un pokemon existente</h3>
+            </div>  
+        </form>
+    </div>
+</body>
+</html>

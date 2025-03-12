@@ -1,0 +1,102 @@
+body{
+    background-size: cover;
+    background-image: url('img/rayquaza.webp');
+    color: white;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5%;
+    background-color: chocolate;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    transition: background-color ease 1s;
+}
+button:hover{
+    background-color: rgb(168, 101, 53);
+}
+.table{
+    margin: auto;
+}
+.invisible{
+    display: none;
+}
+table{
+    border: solid rgb(255, 255, 255) 2px;
+    text-align: center;
+    min-width: 200px;
+    background-color:  rgba(0, 0, 0, 0.856);
+    
+}
+table > th td{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    
+}
+th{
+    font-size: 1.5rem;
+    padding: 10px;
+    background-color: rgb(0, 0, 128);
+}
+#errorMessage{
+    color: red;
+    display: none;
+}
+ul{
+    min-height: 100px;
+    list-style: none;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #fff;
+    background-color: rgba(0, 0, 0, 0.856);
+}
+li{
+    transition: color, font-weight ease 0,7s;
+    padding: 0px, 5px, 0px, 5px;
+    
+}
+li > input {
+   font-size: 1.2rem;
+   font-weight: 900;
+   text-align: center;
+}
+
+li:hover{
+    color: red;
+    font-weight: 900;
+    cursor: pointer; 
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#tableAbility{
+    transition: background-color ease 1s;
+}
+#tableAbility:hover{
+cursor: pointer;
+background-color: rgb(58, 58, 58);
+}
+
+.images{
+    min-width: 200px;
+    min-height: 200px;
+}
